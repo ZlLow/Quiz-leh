@@ -1,0 +1,13 @@
+.layout {
+    padding : 0.5rem;
+    min-width: 300px;
+    min-height: 275px;
+    background: rgb(4,31,45);
+    background: linear-gradient(135deg, rgba(4,31,45,0.9753035003063726) 6%, rgba(31,20,189,1) 79%, rgba(201,0,255,1) 100%);     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.body {
+    display: flex;
+}

@@ -1,0 +1,8 @@
+.default {
+    display: flex;
+    flex-direction: row;
+    padding: 6rem;
+    min-height: 92vh;
+    background: rgb(56,69,238);
+    background: linear-gradient(45deg, rgba(56,69,238,0.9164799708946079) 4%, rgba(165,68,230,1) 15%, rgba(230,35,134,1) 35%, rgba(210,57,70,1) 50%, rgba(233,64,79,1) 75%, rgba(255,192,0,0.9612978980654762) 100%);
+}
