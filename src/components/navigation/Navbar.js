@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import navbar from "@/styles/Navbar.module.css"
+
 export default function Navbar() {
     return (
         <>
-            <nav className="navbar navbar-expand-lg bg-light">
+            <nav className={`navbar navbar-expand-lg ${navbar.layout}`}>
                 <div className="container-fluid px-4">
                     <Link className="navbar-brand" href="/">
                         <Image

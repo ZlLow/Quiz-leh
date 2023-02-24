@@ -1,0 +1,18 @@
+.search {
+    top : 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    left: 0.65rem;
+}
+
+.manage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 578px) {
+    .search {
+        left: 0.35rem
+    }
+}
