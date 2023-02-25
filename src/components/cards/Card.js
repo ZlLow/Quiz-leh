@@ -15,7 +15,7 @@ export default function Card(components) {
                                 alt={components.alt}
                                 width={components.width}
                                 height={components.height}
-                                className={components.style}
+                                className="img-fluid"
                                 priority
                             />
                             <div className="d-flex justify-content-center">

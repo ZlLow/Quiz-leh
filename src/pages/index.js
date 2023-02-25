@@ -16,12 +16,12 @@ export default function Home() {
   return (
       <>
           <div className={background.home}>
-              <div className="d-flex flex-wrap flex-fill justify-content-center align-content-center">
+              <div className="d-flex justify-content-center">
                   <div className="hstack gap-5">
                       <Card href="/play" image="/play_arrow.svg" width={200} height={175} alt="Play">
                               Play
                       </Card>
-                      <Card href="/manage" image="/library.svg" width={200} height={175} alt="Manage" style={icon.manage}>
+                      <Card href="/manage" image="/library.svg" width={200} height={175} alt="Manage">
                           Manage
                       </Card>
                   </div>

@@ -7,3 +7,11 @@
     display: flex;
     border: 2px dashed grey;
 }
+
+.play {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+    padding: 6rem;
+    align-items: center;
+}
