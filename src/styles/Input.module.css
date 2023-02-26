@@ -1,0 +1,11 @@
+.answer {
+    color: #212529;
+    outline: none;
+    user-select: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    background-color: rgba(255,255,255,0.12);
+    border: 0;
+    margin-left: 0.5rem;
+    width: 100%;
+}
