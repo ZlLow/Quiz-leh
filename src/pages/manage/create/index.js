@@ -1,11 +1,17 @@
-import Image from "next/image";
+// React State
+import {useState} from "react";
 
+// NextJS Front-end
+import Image from "next/image";
+import Link from "next/link";
+
+//CSS Module
 import styles from "@/styles/Create.module.css"
 import background from "@/styles/Background.module.css"
 import formStyle from "@/styles/Form.module.css"
 import inputStyle from "@/styles/Input.module.css"
 import divStyle from "@/styles/Div.module.css"
-import {useState} from "react";
+
 
 
 let nextId = 0;
@@ -22,7 +28,7 @@ export default function Create() {
                 <div className="d-flex flex-nowrap">
                     <QuestionBank/>
                 </div>
-                <div className="mt-5 container-fluid">
+                <div className="container-fluid mt-5">
                     <div className="d-flex justify-content-center">
                         <form className="w-100 px-5">
                             <input type="text" className={formStyle.question} placeholder="Start typing your question"/>
@@ -49,7 +55,8 @@ export default function Create() {
                             </div>
                             <div className="d-flex justify-content-center my-3 gap-3">
                                 <button className="btn btn-primary" type="submit">Save</button>
-                                <button className="btn btn-secondary">Exit</button>
+                                <button className="btn btn-secondary">
+                                    <Link href="/manage">Exit</Link></button>
                             </div>
                         </form>
                     </div>

@@ -1,11 +1,13 @@
+import {useState} from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
+
 import Link from "next/link";
 import Image from "next/image";
 
 import navbar from "@/styles/Navbar.module.css"
-import {useState} from "react";
 
 export default function Navbar() {
-    const [loggedin, loggedInState] = useState(false);
+    const { data: session } = useSession();
     return (
         <>
             <nav className={`navbar navbar-expand-lg ${navbar.layout}`}>
@@ -27,19 +29,19 @@ export default function Navbar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav ms-auto">
-                                <li className="nav-item">
-                                    <Link className="nav-link" aria-current="page" href="/">Home</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" href="/manage">Library</Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" href="/play">Play</Link>
-                                </li>
-                            </ul>
+                        <ul className="navbar-nav ms-auto">
+                            <li className="nav-item">
+                                <Link className="nav-link" aria-current="page" href="/">Home</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" href="/manage">Library</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" href="/play">Play</Link>
+                            </li>
+                        </ul>
                         <div className="ms-auto">
-                            {!loggedin ? <ProfileTab/> : <SignInTab/>}
+                            {session ? <ProfileTab/> : <SignInTab/>}
                         </div>
                     </div>
                 </div>
@@ -48,14 +50,14 @@ export default function Navbar() {
     )
 }
 
-function ProfileTab() {
+function ProfileTab(components) {
     return (
         <>
             <div>
                 <Link className="d-flex flex-row" href="/profile">
                     <Image src="/profile.svg" alt="profile" className="rounded-circle border border-dark" width={30} height={30}/>
                     <div className="ms-2 mt-1 text-black-50">
-                        Name
+                        {components.name}
                     </div>
                 </Link>
             </div>
@@ -64,15 +66,21 @@ function ProfileTab() {
 }
 
 function SignInTab() {
+
     return (
         <>
-            <div className="hstack gap-3">
-                <button className="btn btn-outline-primary">
-                  <Link href="/auth/login">Login</Link>
-                </button>
-                <button className="btn btn-outline-primary">
-                    <Link href="/auth/register">Sign Up</Link>
-                </button>
+            <div className="container-fluid navbar-nav">
+                <Link className="nav-link" href={`/api/auth/signIn`} onClick={
+                    (e) => {
+                        e.preventDefault();
+                        signIn();
+                    }}>
+                    <button className="btn btn-outline-primary">Login </button>
+                </Link>
+                <Link className="nav-link" href="/auth/register">
+                    <button className="btn btn-outline-secondary">Sign Up
+                    </button>
+                </Link>
             </div>
         </>
     )
